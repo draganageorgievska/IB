@@ -1,0 +1,53 @@
+﻿@model IEnumerable<IB.Models.StudentExam>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+@if (!Model.Equals(null)) { 
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Exam.Teacher)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Exam.Subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Exam.Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Exam.Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Exam.Teacher)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Exam.Subject)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Exam.Grade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Exam.Date)
+                </td>
+                <td>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
+            else
+            {
+    <label>No exams</label>
+            }
